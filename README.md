@@ -1,58 +1,46 @@
 
-# 🔀 Logistic Map and Lyapunov Exponents: Chaos vs Stability
+# ❄️ Crystal Growth Cluster Model (Rock Candy Model)
 
-This project explores the **logistic map** and quantifies chaos by calculating **Lyapunov exponents**, showing the difference between stable and chaotic regimes.
+This project simulates **cluster growth and crystallization** using a diffusion-limited aggregation (DLA) approach, often referred to as the "Rock Candy Model."
 
 ---
 
 ## 📂 Code Structure
-- **main.py** → logistic map iteration, trajectory comparison for close initial conditions, and Lyapunov exponent calculation.
+- **main.py** → particle initialization, diffusion, sticking, and cluster growth visualization.
 
 ---
 
 ## 🔑 Important Variables
-- `r` → logistic map parameter controlling dynamics  
-- `x0`, `x0_prime` → two nearby initial conditions  
-- `N` → number of iterations  
+- `N` → total number of particles released  
+- `C` → container size (grid dimension)  
+- `Stick()` → defines sticking probability  
+- `Crystallize()` → function that handles aggregation into clusters  
 
 ---
 
 ## ⚙️ How to Interact
 1. Open **main.py**  
-2. Change `r` to explore different regimes:
-   - $r < 3$: stable, convergent dynamics  
-   - $r > 3.57$: chaotic regime  
-3. Adjust `x0` and `x0_prime` to test sensitivity to initial conditions.  
+2. Adjust `N` to simulate larger or smaller clusters.  
+3. Modify parameters in `Stick()` to change aggregation dynamics.  
 4. Run:
    ```bash
    python main.py
+
 
 ---
 
 ## 🧠 Physical/Statistical Intuition
 
-* Logistic map:
-
-  $$
-  x_{n+1} = r x_n (1 - x_n)
-  $$
-
-* Lyapunov exponent:
-
-  $$
-  \lambda = \lim_{n \to \infty} \frac{1}{n} \sum_{i=1}^n \ln \left|\frac{dx_{i+1}}{dx_i}\right|
-  $$
-
-* \$\lambda > 0\$ → chaos (exponential divergence).
-
-* \$\lambda < 0\$ → stability (convergence to fixed point or cycle).
+* Particles diffuse randomly until they stick to the existing cluster.
+* Over time, large-scale structures resembling crystalline "rock candy" emerge.
+* Demonstrates the mechanism of **Diffusion-Limited Aggregation (DLA)** and stochastic crystal growth.
 
 ---
 
 ## 🧮 Numerical Models
 
-* **Iterative mapping** (logistic equation)
-* **Lyapunov exponent estimation**
-* **Chaos vs stability analysis**
+* **Stochastic particle diffusion**
+* **Diffusion-limited aggregation (DLA)**
+* **Monte Carlo cluster growth simulation**
 
 
